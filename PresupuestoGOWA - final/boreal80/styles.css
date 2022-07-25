@@ -1,0 +1,28 @@
+.main-div {
+    margin: auto;
+    width: 77%;
+    height: 70%;
+}
+h1 {
+    color: white;
+}
+h2 {
+    color: white;
+}
+.logoimg {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    width: 350px;
+    height: 320px;
+}
+.card {
+    background-color: gray;
+}
+td {
+    padding: 70px;
+}
+h1,h2,h3,h4,h5 {
+    font-family: 'Manrope', sans-serif;
+}

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+         <!--Favicon-->
+         <link href="favicon.ico" rel="icon" type="image/x-icon" />
+         <title>Boreal 70 || lxpress</title>
+        <!--CSS-->
+        <link rel="stylesheet" href="./resmastyle.css">
+         <!--Bootstrap v4.6x-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="./23x16.js"></script>
+        <!--Google Fonts-->
+        
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body style="background-color: #630606;">
+    <div class="main-div" style="background-color: black;">
+        <h2 style="color: black;">----------------</h2>
+        <img src="./boreal1.png" alt="boreal70gr" class="logoimg"><br><br>
+        <h1 style="text-align:center;">Cálculo de presupuesto para el papel <span style="font-weight: 700;">Boreal (70 gr.)</span></h1><br><br>    
+        
+        <h2 style="text-align: center;">Para empezar indique la cantidad de libros.</h2><br><br>
+
+        <div class="input-group mb-6" style="width: 40%;margin:auto;">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Cantidad de Libros</span>
+              </div>
+              <input type="text" class="form-control" id="bookValue" aria-label="Amount (to the nearest dollar)">
+        <div class="input-group-append">
+            <button class="btn btn-outline-secondary btn-light" type="button" onclick="getBookValue()">Enviar</button>
+        </div>
+        </div>
+        <br><br>
+            <table>
+                <tbody>
+                    <tr>
+                        <td><h5 >La cantidad de ejemplares a presupuestar es de:ㅤ </h3></td>
+                        <td><h5 id="books" ></h3></td>
+                    </tr>
+                    
+                </tbody>
+            </table><br><br>
+
+
+        
+        
+        
+        <h2 style="text-align: center;">Por favor, indique el tamaño de la resma.</h2><br><br>
+            
+            <div class="input-group mb-6" style="width: 40%;margin:auto;margin-bottom:2% ;">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Ancho</span>
+                  </div>
+                  <input type="text" class="form-control" id="widthValue" aria-label="Amount (to the nearest dollar)">
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary btn-light" type="button" onclick="getWidthInput(); getWidthInput1(); getWidthInput2();">Enviar</button>
+            </div>
+            </div>
+            
+            <div class="input-group mb-6" style="width: 40%;margin:auto;">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Alto</span>
+                  </div>
+                  <input type="text" class="form-control" id="heightValue" aria-label="Amount (to the nearest dollar)">
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary btn-light" type="button" onclick="getHeightValue(); getHeightValue1(); getHeightValue2();">Enviar</button>
+            </div>
+            </div>
+
+            <br><br>
+            <table>
+                <tbody>
+                    <tr>
+                        <td><h5>El tamaño de la resma actual es de:ㅤ </h3></td>
+                        <td><h5 id="width"></h3></td>
+                        <td><h5 >ㅤxㅤ</h3></td>
+                        <td><h5 id="height" ></h3></td>
+                    </tr>
+                    
+                </tbody>
+            </table><br><br>
+
+        <h3 style="text-align: center;">A continuación, declare el precio de la resma.</h3><br><br>
+
+        <div class="input-group mb-6" style="width: 40%;margin:auto;">
+            <div class="input-group-prepend">
+              <span class="input-group-text">$</span>
+            </div>
+            <input type="text" class="form-control" id="gettResmaValue" aria-label="Amount (to the nearest dollar)">
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary btn-light" type="button" onclick="getResmaValue1();getResmaValue2();">Enviar</button>
+            </div>
+          </div>
+        
+        <br><br>
+           <br>
+            
+        <!--<button type="button" class="btn btn-secondary" onclick="getResmaValue1();getHeightValue1();getResmaValue1();getWidthInput1();">Obtener los datos hasta el momento</button> -->   
+        <br><br>
+        <details>
+            <summary style="color:white;">Mostrar datos hasta el momento: </summary>
+            <table>
+                <tbody>
+                    <tr>
+                        <td><h5 >El precio de la resma actual es de:ㅤ </h5></td>
+                        <td><h5 id="resmaValuepasado1" ></h3></td>
+                    </tr>
+                    <tr>
+                        <td><h5 >El tamaño de la resma actual es de:ㅤ </h5></td>
+                            <td><h5 id="widthvaluepasado1" ></h5></td>
+                            <td><h5 >ㅤxㅤ</h3></td>
+                            <td><h5 id="heightvaluepasado1" ></h5></td>
+                    </tr>
+                </tbody>
+            </table>
+        </details>    
+        <br><br><br><br><br><br>
+            
+        <h3 style="text-align: center;">A continuación, indique la cantidad de páginas del libro.</h3><br><br>
+
+        <div class="input-group mb-6" style="width: 40%;margin:auto;">
+            <input type="text" id="pagesValue" class="form-control" aria-label="Amount (to the nearest dollar)">
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary btn-light" type="button" onclick="getPagesValue();pliegos();">Enviar</button>
+            </div>
+          </div>
+        <br><br>
+
+        <h3 style="text-align: center;">Por último, indique el precio de las tapas.</h3><br><br>
+
+        <div class="input-group mb-6" style="width: 40%;margin:auto;">
+            <div class="input-group-prepend">
+              <span class="input-group-text">$</span>
+            </div>
+            <input type="text" id="tapaValue" class="form-control" aria-label="Amount (to the nearest dollar)">
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary btn-light" type="button" onclick="getPagesValue();pliegos();">Enviar</button>
+            </div>
+          </div>
+
+        <br><br>
+
+
+        <details>
+            <summary style="color:white;">Mostrar datos finales: </summary>
+            <table>
+                <tbody>
+                    <tr>
+                        <td><h5 style="color: #DF711B">El precio de la resma actual es de:ㅤ </h5></td>
+                        <td><h5 id="resmaValuepasado2" style="color: #DF711B"></h3></td>
+                    </tr>
+                    <tr>
+                        <td><h5 style="color: #FFB740">El tamaño de la resma actual es de:ㅤ </h5></td>
+                            <td><h5 id="widthvaluepasado2" style="color: #FFB740;"></h5></td>
+                            <td><h5 style="color: #FFB740;">ㅤxㅤ</h3></td>
+                            <td><h5 id="heightvaluepasado2" style="color: #FFB740;"></h5></td>
+                    </tr>
+                    <tr>
+                        <td><h5 style="color: #5E454B;">La cantidad de páginas ingresadas es de:ㅤ </h5></td>
+                        <td><h5 id="pages" style="color: #5E454B;"></h3></td>
+                    </tr>
+                    <tr><td><h5 style="color: #4A503D;">Cantidad de pliegos:ㅤ </h5></td>
+                        <td><h5 id="pliegosAmount" style="color: #4A503D;"></h5></td>
+                    </tr>
+                    <tr>
+                        <td><h5 style="color: #34656D;">Cantidad de pliegos por todos los libros:ㅤ </h5></td>
+                        <td><h5 id=librosxPliego style="color: #34656D;"></h5></td>
+                    </tr>
+                    <tr><td><h5 style="color: #845EC2;">Cantidad de resmas a utilizar:ㅤ </h5></td>
+                        <td><h5 id="cantResma" style="color: #845EC2;"></h5></td>
+                    </tr>
+                    <tr>
+                        <td><h5 style="color: #534E52;">Valor de una (1) tapa:ㅤ </h5></td>
+                        <td><h5 id="tapas" style="color: #534E52;"></h5></td>
+                    </tr>
+                </tbody>
+            </table>
+        </details>
+
+    <br><br>
+
+    <h4 style="text-align:center;">Primer precio final del papel (Sin coeficiente): </h3>
+    <h4 id="primerprecio"style="text-align:center;color: #61481C;"></h3><br><br>
+    <h4 style="text-align:center;">Precio final del papel: </h3>
+    <h4 id="preciofinal" style="text-align:center;color:#5A8F7B;"></h3><br>
+    <h4 style="text-align:center;">bajo el coeficiente </h3>
+    <h4 id="coeficiente" style="text-align:center;color:lightblue;"></h3>
+    <h1>ㅤ</h1>
+    <h1>ㅤ</h1>
+    </div>
+</body>
+</html>
